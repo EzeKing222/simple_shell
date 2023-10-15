@@ -1,0 +1,31 @@
+#include "shell.h"
+#define MAX_DEL 50
+
+int main()
+{
+	char *path = getenv("PATH");
+	char *pdelim = ":";
+	char *envp[MAX_DEL];
+	char *ptoken = strtok(path, pdelim);
+	int token_count = 0;
+	int i;
+	char *argv[10];
+	argv[0] = "/ls";
+
+	{
+		while (ptoken != NULL && token_count < MAX_DEL)
+		{
+			envp[token_count] = ptoken;
+			token_count++;
+			ptoken = strtok(NULL, pdelim);
+		}
+	}
+	envp[token_count] = NULL;
+
+	for (i = 0; i < token_count; i++)
+	{
+		strcat(envp[i], argv[0]);
+		printf("%s\n", envp[i]);
+	}
+	return (0);
+}
