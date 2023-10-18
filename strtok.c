@@ -1,7 +1,8 @@
 #include "shell.h"
 
 /**
- * delimiter - My function used to check if a character matchs with any other character
+ * delimiter - My function used to check if
+ * a character matchs with any other character
  * @c: Given character to check
  * @str: Given string of delimiters
  * Return: Return (1) on success, (0) for failure

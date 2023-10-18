@@ -71,11 +71,11 @@ char *_strcat(char *dest, char *src)
 }
 
 /**
- *  * _atoi - My function used to convert string to integer.
- *   *@s: Certain input string.
- *    * Return: Results integer from conversion.
- *    *Last line
- *     */
+ * _atoi - My function used to convert string to integer.
+ * @s: Certain input string.
+ * Return: Results integer from conversion.
+ * Last line
+ */
 int _atoi(char *s)
 {
 	int sign = 1;

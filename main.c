@@ -19,21 +19,15 @@ int main(int ac, char **av, char **env)
 
 	while (1)
 	{
-
 		ccc++;
-
 		prompt_func();
-
 		signal(SIGINT, handle_signs);
-
 		chars_decl = getline(&in_buffer, &buf_size, stdin);
 
 		if (chars_decl == EOF)
 			_EOF_(in_buffer);
-
 		else if (*in_buffer == '\n')
 			free(in_buffer);
-
 		else
 		{
 
@@ -42,21 +36,16 @@ int main(int ac, char **av, char **env)
 			cmd = string_cmd(in_buffer, " \0");
 
 			free(in_buffer);
-
 			if (_strcmp(cmd[0], "exit") != 0)
 				sh_exit(cmd);
-
 			else if (_strcmp(cmd[0], "cd") != 0)
 				change_dir(cmd[1]);
 			else
 				child(cmd, av[0], env, ccc);
 		}
-
 		fflush(stdin);
-
 		in_buffer = NULL, buf_size = 0;
 	}
-
 	if (chars_decl == -1)
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
